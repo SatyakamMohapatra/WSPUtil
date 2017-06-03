@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan(basePackages   ={"com.chartboxapp"},
+@ComponentScan(basePackages   ={"com.unify_iri.wspUtill"},
 			   excludeFilters ={
 					   @Filter(type  = FilterType.ANNOTATION,
 										   value = EnableWebMvc.class)})
-@PropertySource(value={"classpath:***.properties"})
+//@PropertySource(value={"classpath:***.properties"})
 @EnableTransactionManagement
 public class WspAppCoreConfig {
 
