@@ -15,8 +15,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 public class WspAppConfig extends WebMvcConfigurerAdapter {
 	
+	public WspAppConfig() {
+		System.out.println("Method called");
+	}
+	
 	@Bean
 	public ViewResolver viewResolver() {
+		System.out.println("Method called ViewResolver");
 		InternalResourceViewResolver viewResolver  = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");

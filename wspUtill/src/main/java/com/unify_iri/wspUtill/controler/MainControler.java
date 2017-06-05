@@ -15,5 +15,4 @@ public class MainControler {
 				+ "[redirectToMainPage][ Main Page Loaded]");
 		 return modelAndView;
 	 }
-
 }

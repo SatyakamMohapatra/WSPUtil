@@ -13,8 +13,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 			   excludeFilters ={
 					   @Filter(type  = FilterType.ANNOTATION,
 										   value = EnableWebMvc.class)})
-//@PropertySource(value={"classpath:***.properties"})
 @EnableTransactionManagement
 public class WspAppCoreConfig {
 
 }
+ 
