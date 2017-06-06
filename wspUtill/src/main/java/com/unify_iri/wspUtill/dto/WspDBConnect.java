@@ -1,10 +1,19 @@
 package com.unify_iri.wspUtill.dto;
 
-public class WspModel {
+public class WspDBConnect {
 	private String url;
 	private String userName;
 	private String password;
-	private String wspId;
+	
+	public WspDBConnect() {
+	}
+	
+	public WspDBConnect(String url, String userName, String password) {
+		super();
+		this.url = url;
+		this.userName = userName;
+		this.password = password;
+	}
 	public String getUrl() {
 		return url;
 	}
@@ -22,11 +31,5 @@ public class WspModel {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getWspId() {
-		return wspId;
-	}
-	public void setWspId(String wspId) {
-		this.wspId = wspId;
 	}
 }
