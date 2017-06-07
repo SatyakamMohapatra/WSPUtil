@@ -100,7 +100,6 @@
 								</label>
 							</div>
 							</c:forEach>
-
 							<li class="treeview"></li>
 							<li>
 								<div class="box-footer">
