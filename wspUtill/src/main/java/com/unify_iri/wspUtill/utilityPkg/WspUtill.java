@@ -25,12 +25,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 public class WspUtill {
-	
+
 	public static JdbcTemplate getJdbcTemplate(String UserName,String Password) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(new WspUtill().newInstance(UserName, Password));
 		return jdbcTemplate;
 	}
-	
+
 	private DataSource newInstance(String UserName,String Password){
 		DriverManagerDataSource driver = new DriverManagerDataSource();
 		driver.setUrl("jdbc:oracle:thin:@//ex02-scan.ch3.prod.i.com:1521/sv01dmt");
@@ -39,10 +39,10 @@ public class WspUtill {
 		driver.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		return driver;
 	}
-	
- 	public  static void writeToFile(String fileName,String str)
+
+	public  static void writeToFile(String fileName,String str)
 	{
- 		File f = new File(fileName);
+		File f = new File(fileName);
 		try {
 			f.getParentFile().mkdirs();
 			f.createNewFile();
@@ -53,7 +53,7 @@ public class WspUtill {
 			e.printStackTrace();
 		}
 	}
- 	
+
 	public static String read(String fileName) throws Exception{
 		StringBuilder sb = new StringBuilder();
 		String sCurrentLine;
@@ -66,16 +66,16 @@ public class WspUtill {
 		br.close();
 		return	sb.toString();
 	}
-	
+
 	public static String convertClobToString(Clob clobData)throws SQLException,IOException{
-    	char clobVal[] = new char[(int) clobData.length()];
+		char clobVal[] = new char[(int) clobData.length()];
 		Reader paramValueReader = clobData.getCharacterStream();
 		paramValueReader.read(clobVal);
 		StringWriter sw = new StringWriter();
 		sw.write(clobVal);
-    	return sw.toString();
-    }
-	
+		return sw.toString();
+	}
+
 	public static byte[] compressIt(String source)
 	{
 		try
@@ -84,7 +84,7 @@ public class WspUtill {
 			if(source == null)
 				return null;
 			ByteArrayOutputStream bis = new ByteArrayOutputStream();
-			
+
 			sourceArr = source.getBytes("UTF-8");
 			source.getBytes();
 			GZIPOutputStream gOut = new GZIPOutputStream(bis);
@@ -100,14 +100,14 @@ public class WspUtill {
 			return null;	
 		}
 	}
-	
+
 	public static String unCompressIt(byte[] source)
 	{
 		try
 		{
 			if(source == null)
 				return null;
-				
+
 			ByteArrayInputStream bis = new ByteArrayInputStream(source);
 			GZIPInputStream gOut = new GZIPInputStream(bis);			
 			ByteArrayOutputStream bout = new ByteArrayOutputStream();		
@@ -134,11 +134,11 @@ public class WspUtill {
 	{
 		byte[] byteArray = null ;
 		Blob blobObj = rs.getBlob(columnName);
-		
+
 		if (blobObj != null && blobObj.length() > 0) 
 			byteArray = blobObj.getBytes(1, (int) blobObj.length());
-		
+
 		return byteArray ;
 	}
-	
+
 }

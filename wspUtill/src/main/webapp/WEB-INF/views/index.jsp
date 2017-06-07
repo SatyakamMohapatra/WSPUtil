@@ -1,81 +1,35 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
 <html>
 
-	<head>
-		<title>Spring MVC Starter Application</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="<c:url value="/static/resources/css/screen.css"/>"/>
-	</head>
+<head>
+<title>Spring MVC Starter Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/static/resources/css/screen.css"/>" />
+</head>
 
-	<body>
-	<h2>WSP Utill</h2>
-	<form>
+<body>
+	<h2 align="center">WSP Utill</h2>
+	<form:form modelAttribute="wspModel" action="/search" method="POST">
 		<table>
 			<tbody>
-				<tr>
-					<td>DB URL String :-</td>
-					<td><input type="text" /></td>
-				</tr>
-				<tr>
-					<td>DB USERNAME :-</td>
-					<td><input type="text" /></td>
-				</tr>
-				<tr>
-					<td>DB PASSWORD :-</td>
-					<td><input type="text" /></td>
-				</tr>
-				<tr>
-					<td>WSP ID:-</td>
-					<td><input type="text" /></td>
-				</tr>
-				<tr>
-					<td><input type="submit" value="SUBMIT"/></td>
-				</tr>
-				
+				<tr><td align="center"><b>DB DETAIL</b></td></tr>
+				<tr><td>DB:-</td><td><form:input path="url" /></td></tr>
+				<tr><td>USRNAME:-</td><td><form:input path="userName" /></td></tr>
+				<tr><td>PWD:-</td><td><form:input path="password" /></td></tr>
+				<tr><td align="center"><b>WSP DETAIL</b></td></tr>
+				<tr><td>WSP ID:-</td><td><form:input path="wspID" /></td></tr>
+				<tr><td>
+				PlanType:-</td><td><form:radiobuttons path="PlanType" items="${planTypes}" />
+				</td></tr>
+				<tr><td><input type="submit" value="SUBMIT" /></td></tr>
 			</tbody>
 		</table>
-	</form>
-	
-		<%-- <div id="container">
-			<div id="content">
-
-
-				<form:form commandName="newMember" id="reg">
-					<h2>Member Registration</h2>
-					<p>Enforces annotation-based constraints defined on the model class.</p>
-					<table>
-						<tbody>
-							<tr>
-								<td><form:label path="name">Name:</form:label></td>
-								<td><form:input path="name"/></td>
-								<td><form:errors class="invalid" path="name"/></td>
-							</tr>
-							<tr>
-								<td><form:label path="email">Email:</form:label></td>
-								<td><form:input path="email"/></td>
-								<td><form:errors class="invalid" path="email"/></td>
-							</tr>
-							<tr>
-								<td><form:label path="phoneNumber">Phone #:</form:label>
-								<td><form:input path="phoneNumber"/></td>
-								<td><form:errors class="invalid" path="phoneNumber"/></td>
-							</tr>
-	
-						</tbody>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<input type="submit" value="Register" class="register"/>
-							</td>
-						</tr>
-					</table>
-				</form:form>
-			</div> --%>
-			<div id="footer">
-			</div>
-		</div>
-	</body>
+	</form:form>
+	<div id="footer"></div>
+</body>
 </html>

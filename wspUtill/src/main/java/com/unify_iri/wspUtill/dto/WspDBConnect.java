@@ -4,6 +4,8 @@ public class WspDBConnect {
 	private String url;
 	private String userName;
 	private String password;
+	private String wspID;
+	private String PlanType;
 	
 	public WspDBConnect() {
 	}
@@ -32,4 +34,21 @@ public class WspDBConnect {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getWspID() {
+		return wspID;
+	}
+
+	public void setWspID(String wspID) {
+		this.wspID = wspID;
+	}
+
+	public String getPlanType() {
+		return PlanType;
+	}
+
+	public void setPlanType(String planType) {
+		PlanType = planType;
+	}
+	
 }

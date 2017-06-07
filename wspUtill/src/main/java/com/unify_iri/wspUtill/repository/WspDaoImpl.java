@@ -12,7 +12,8 @@ public class WspDaoImpl implements WspDao {
 	
 	@Override
 	public void selectAllPROPERTIES(String wspIds, String paneType, String UserName, String Password ) {
-		this.jdbcTemplate = WspUtill.getJdbcTemplate(UserName, Password);
+		//this.jdbcTemplate = WspUtill.getJdbcTemplate(UserName, Password);
+		System.out.println("[selectAllPROPERTIES][WspDaoImpl]");
 		
 	}
 
