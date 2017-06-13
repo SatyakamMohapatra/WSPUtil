@@ -21,7 +21,7 @@ public class MainControler {
 	private WspService wspService;
 	
 	@ModelAttribute("planTypes")
-	public List getPlanTypes(){
+	public List<String> getPlanTypes(){
 		List<String> planTypes = new ArrayList<String>();
 		for (PANE_TYPE type : PANE_TYPE.values()) {
 			planTypes.add(type.name());
@@ -34,14 +34,14 @@ public class MainControler {
 
 		System.out.println("[com.unify_iri.wspUtill.controler.MainControler]"
 				+ "[redirectToMainPage][ Main Page Loaded]");
-		wspService.selectAllPROPERTIES("", "", null, null);
 		
 		return new ModelAndView("profile","wspModel",new WspDBConnect());
 	}
 
 	@RequestMapping(path = "/search",method= RequestMethod.POST)
 	public String DBConnection(@ModelAttribute("wspDBConnect") WspDBConnect model){
-		WspDBConnect connect= new WspDBConnect(model.getUrl(),model.getUserName(),model.getPassword());
+		WspDBConnect connect= new WspDBConnect(model);
+		wspService.getPROPERTIES(connect);
 		
 		
 		return "connected";

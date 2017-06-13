@@ -9,6 +9,14 @@ public class WspDBConnect {
 	
 	public WspDBConnect() {
 	}
+	public WspDBConnect(WspDBConnect wspDBConnect) {
+		super();
+		this.url = wspDBConnect.getUrl();
+		this.userName = wspDBConnect.getUserName();
+		this.password = wspDBConnect.getPassword();
+		this.wspID = wspDBConnect.getWspID();
+		this.PlanType = wspDBConnect.getPlanType();
+	}
 	
 	public WspDBConnect(String url, String userName, String password) {
 		super();

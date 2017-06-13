@@ -3,7 +3,7 @@ package com.unify_iri.wspUtill.repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.unify_iri.wspUtill.utilityPkg.WspUtill;
+import com.unify_iri.wspUtill.dto.WspDBConnect;
 
 @Repository
 public class WspDaoImpl implements WspDao {
@@ -11,9 +11,11 @@ public class WspDaoImpl implements WspDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public void selectAllPROPERTIES(String wspIds, String paneType, String UserName, String Password ) {
+	public String getPROPERTIES(WspDBConnect model){
 		//this.jdbcTemplate = WspUtill.getJdbcTemplate(UserName, Password);
 		System.out.println("[selectAllPROPERTIES][WspDaoImpl]");
+		
+		return null;
 		
 	}
 
